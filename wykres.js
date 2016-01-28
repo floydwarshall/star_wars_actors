@@ -87,11 +87,11 @@ d3.json("data.json", function(error, graph){
         
         text.attr("x", function(d){
                 if(d.group == 1)
-                    return d.x - Math.sqrt(d.sajz);
+                    return d.x - 2 * Math.sqrt(d.sajz) - 10;
                 else
-                    return d.x + Math.sqrt(d.sajz);
+                    return d.x + 2 * Math.sqrt(d.sajz) + 10;
             })
-            .attr("y", function(d){return d.y;});
+            .attr("y", function(d){return d.y + 3;});
                         
         link.attr("x1", function(d){return d.source.x;})
             .attr("y1", function(d){return d.source.y;})
