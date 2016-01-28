@@ -1,0 +1,49 @@
+.node{
+    stroke: #999;
+    stroke-width: 1px;
+}
+
+.link{
+    stroke: #222;
+    stroke-opacity: .4;
+}
+
+text{
+    font-size: 10px;
+    fill: #ffffff;
+}
+
+div{
+    color: #ccc;
+    font-size: 16px;
+    border: 3px solid;
+    border-color: #eee;
+    border-radius: 10px;
+    background-color: #222;
+    position:fixed;
+    right:5px;
+}
+
+body{
+    background-image: url(http://www.makoweabc.pl/wp-content/uploads/2013/01/Star-Wars-Death-Star.jpg);
+}
+
+svg{
+    position:absolute;
+    top: 0px;
+}
+
+#opis{
+    padding: 5px 5px 5px 5px;
+    top: 0px;
+    width:200px;
+}
+
+#face{
+    bottom: 0px;
+    height: 200px;
+    background-size: 100%;
+    background:no-repeat;
+    width: 200px;
+    background-image: url(obrazy/death_star.png);
+}
