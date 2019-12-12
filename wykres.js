@@ -1,8 +1,8 @@
-var width = 960,
+var width = 800,
 height = 800;
 
 var force = d3.layout.force()
-    .charge(function(d){return -d.sajz*50; })
+    .charge(function(d){return -d.s*20; })
     .linkDistance(200)
     .size([width, height]);
             
@@ -10,7 +10,7 @@ var svg = d3.select("body").append("svg")
     .attr("width", width)
     .attr("height", height);
                 
-d3.json("data.json", function(error, graph){
+d3.json("data/graph.json", function(error, graph){
     if (error) throw error;
                 
     force
@@ -28,7 +28,7 @@ d3.json("data.json", function(error, graph){
         .data(graph.nodes)
         .enter().append("circle")
             .attr("class", "node")
-            .attr("r", function(d){return 2 * Math.sqrt(d.sajz)})
+            .attr("r", function(d){return Math.sqrt(d.s)})
             .style("fill", function(d){
                 if(d.group == 1)
                     return "#a6a115";
@@ -36,22 +36,22 @@ d3.json("data.json", function(error, graph){
                     return "#5c5c5c";})
                     
             .on("click",function(d, i){
-                var p = document.getElementsByTagName("div")[0];
-                var face = document.getElementsByTagName("div")[1];
-                p.innerHTML = "<b>" + d.name + "</b>" + "<br>";
+                var p = $("#opis");
+                var face = $("#face");
+                p.html("<b>" + d.name + "</b><br>");
                 
                 link.style("stroke", function(d2){
-                    if(d2.source == d){
-                        p.style.color = "#c1bd5c";
-                        p.innerHTML += d2.target.name + " - " + d2.value + "<br>";
-                        face.style.backgroundImage = "url('" + d.foto + "')";
+                    if(d2.target == d){
+                        p.css("color", "#c1bd5c");
+                        p.append(d2.source.name + " - " + d2.value + "<br>");
+                        face.css("background-image", "url('" + d.foto + "')");
                         return "white";
                     }
                     
-                    else if(d2.target == d){
-                        p.style.color = "#bcbcbc";
-                        p.innerHTML += d2.source.name + " - " + d2.value + "<br>";
-                        face.style.backgroundImage = "url('obrazy/death_star.png')";
+                    else if(d2.source == d){
+                        p.css("color", "#bcbcbc");
+                        p.append(d2.target.name + " - " + d2.value + "<br>");
+                        face.css("background-image", "url('images/death_star.png')");
                         return "white";
                     }
                 })
@@ -82,14 +82,14 @@ d3.json("data.json", function(error, graph){
                     return d.x = Math.max(600, d.x);
             })
             .attr("cy", function(d, i){
-                return d.y;
+                return Math.min(Math.max(d.y, 0), 800);
             });
         
         text.attr("x", function(d){
                 if(d.group == 1)
-                    return d.x - 2 * Math.sqrt(d.sajz) - 10;
+                    return d.x - 2 * Math.sqrt(d.s) - 10;
                 else
-                    return d.x + 2 * Math.sqrt(d.sajz) + 10;
+                    return d.x + 2 * Math.sqrt(d.s) + 10;
             })
             .attr("y", function(d){return d.y + 3;});
                         
