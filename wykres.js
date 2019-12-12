@@ -1,5 +1,9 @@
-var width = 800,
-height = 800;
+var width = 800;
+var namesdata = [];
+var genresdata = [];
+var names = {};
+var genres = {};
+var height = 800;
 
 var force = d3.layout.force()
     .charge(function(d){return -d.s*20; })
@@ -55,6 +59,12 @@ d3.json("data/graph.json", function(error, graph){
                         return "white";
                     }
                 })
+                if(d.group == 1) {
+                    drawChart(namesdata, names, genres, d.name, d.group);
+                } else {
+                    drawChart(genresdata, genres, names, d.name, d.group);
+                }
+
             })
             .call(force.drag);
 
@@ -99,3 +109,114 @@ d3.json("data/graph.json", function(error, graph){
             .attr("y2", function(d){return d.target.y;});
     });
 });
+
+
+d3.csv("data/df2.csv")
+    .row(function(d) { return {name: d.primaryName, year: +d.startYear, genre: d.genre, n: +d.n}; })
+    .get(function(error, rows) {
+        rows.forEach(function(row) {
+            if(!(row.name in names)) {
+                names[row.name] = {min: row.year, max: row.year};
+            } else {
+                names[row.name].min = Math.min(names[row.name].min, row.year);
+                names[row.name].max = Math.max(names[row.name].max, row.year);
+            }
+
+            if(!(row.genre in genres)) {
+                genres[row.genre] = {min: row.year, max: row.year};
+            } else {
+                genres[row.genre].min = Math.min(genres[row.genre].min, row.year);
+                genres[row.genre].max = Math.max(genres[row.genre].max, row.year);
+            }
+
+            if(!(row.name in namesdata)) {
+                namesdata[row.name] = {};
+            }
+            if(!(row.genre in namesdata[row.name])) {
+                namesdata[row.name][row.genre] = {};
+            }
+            namesdata[row.name][row.genre][row.year] = row.n;
+
+            if(!(row.genre in genresdata)) {
+                genresdata[row.genre] = {};
+            }
+            if(!(row.name in genresdata[row.genre])) {
+                genresdata[row.genre][row.name] = {};
+            }
+            genresdata[row.genre][row.name][row.year] = row.n;
+        });
+    });
+
+function range(a, b) {
+    var foo = [];
+    for (var i = a; i <= b; i++) {
+       foo.push(i);
+    }
+    return foo;
+}
+
+function drawChart(data, names, categories, selected, group) {
+    var years = range(names[selected].min, names[selected].max);
+    var series = [];
+    Object.keys(categories).forEach(function(category) {
+        if(category in data[selected]) {
+            var dt = new Array(years.length).fill(0);
+            for(var i = 0; i < years.length; i++) {
+                if(years[i] in data[selected][category]) {
+                    dt[i] = data[selected][category][years[i]];
+                }
+            }
+            series.push({name: category, data: dt});
+        }
+    });
+    var chart = Highcharts.chart('container', {
+        chart: {
+            type: 'column',
+            backgroundColor: 'transparent'
+        },
+        title: {
+            text: selected,
+            style: {
+                color: '#fff',
+                fontSize: "20px"
+            }
+        },
+        subtitle: {
+            text: group == 1 ? 'Liczba filmów, w których grał(a) na przestrzeni lat' : 'Liczba filmów granych przez aktorów na przestrzeni lat',
+            style: {
+                color: '#fff',
+                fontSize: "16px"
+            }
+        },
+        xAxis: {
+            categories: years,
+            labels: { style: {
+                color: '#fff'
+            }}
+        },
+        yAxis: {
+            labels: { style: {
+                color: '#fff'
+            }},
+            title: {
+                style: {
+                    color: '#fff'
+                }
+            }
+        },
+        tooltip: {
+            headerFormat: '<b>{point.x}</b><br/>',
+            pointFormat: '{series.name}: {point.y}<br/>Total: {point.stackTotal}'
+        },
+        plotOptions: {
+            column: {
+                stacking: 'normal',
+                dataLabels: {
+                    enabled: false
+                }
+            }
+        },
+        series: series
+
+    });
+}
