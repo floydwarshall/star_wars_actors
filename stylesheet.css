@@ -13,19 +13,15 @@ text{
     fill: #ffffff;
 }
 
-div{
-    color: #ccc;
-    font-size: 16px;
-    border: 3px solid;
-    border-color: #eee;
-    border-radius: 10px;
+/*div{
+
     background-color: #222;
     position:fixed;
     right:5px;
-}
+}*/
 
 body{
-    background-image: url(obrazy/background.jpg);
+    background-image: url(images/background.jpg);
 }
 
 svg{
@@ -33,17 +29,33 @@ svg{
     top: 0px;
 }
 
-#opis{
+#rightdiv {
+    right: 5px;
+    height: 200px;
+    width: 610px;
     padding: 5px 5px 5px 5px;
-    top: 0px;
-    width:200px;
+    border: 3px solid;
+    border-color: #eee;
+    border-radius: 10px;
+    color: #ccc;
+    font-size: 16px;
+    float: right;
+    background-color: #222;
 }
 
-#face{
-    bottom: 0px;
+#opis {
+    padding: 5px 5px 5px 5px;
+    width: 400px;
+    float: left;
+    column-count: 2;
+    word-wrap: break-word;
+}
+
+#face {
     height: 200px;
     background-size: 100%;
     background:no-repeat;
     width: 200px;
-    background-image: url(obrazy/death_star.png);
+    background-image: url(images/death_star.png);
+    float: left;
 }
