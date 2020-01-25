@@ -11,6 +11,7 @@ var force = d3.layout.force()
     .size([width, height]);
             
 var svg = d3.select("body").append("svg")
+    .attr("class", "d3")
     .attr("width", width)
     .attr("height", height);
                 
@@ -40,22 +41,23 @@ d3.json("data/graph.json", function(error, graph){
                     return "#5c5c5c";})
                     
             .on("click",function(d, i){
+                changeDescription(d.desc);
                 var p = $("#opis");
                 var face = $("#face");
                 p.html("<b>" + d.name + "</b><br>");
                 
                 link.style("stroke", function(d2){
+                    var small_image = d.foto ? "url('" + d.foto + "')" : "url('images/death_star.png')";
+                    face.css("background-image", small_image);
                     if(d2.target == d){
                         p.css("color", "#c1bd5c");
                         p.append(d2.source.name + " - " + d2.value + "<br>");
-                        face.css("background-image", "url('" + d.foto + "')");
                         return "white";
                     }
                     
                     else if(d2.source == d){
                         p.css("color", "#bcbcbc");
                         p.append(d2.target.name + " - " + d2.value + "<br>");
-                        face.css("background-image", "url('images/death_star.png')");
                         return "white";
                     }
                 })
@@ -172,36 +174,53 @@ function drawChart(data, names, categories, selected, group) {
     var chart = Highcharts.chart('container', {
         chart: {
             type: 'column',
-            backgroundColor: 'transparent'
+            backgroundColor: 'transparent',
+            style: {
+                fontFamily: 'Verdana'
+            }
         },
         title: {
             text: selected,
             style: {
-                color: '#fff',
+                color: '#ccc',
                 fontSize: "20px"
             }
         },
         subtitle: {
-            text: group == 1 ? 'Liczba filmów, w których grał(a) na przestrzeni lat' : 'Liczba filmów granych przez aktorów na przestrzeni lat',
+            text: group == 1 ? 'Liczba filmów*, w których grał(a) na przestrzeni lat' : 'Liczba filmów* granych przez aktorów na przestrzeni lat',
             style: {
-                color: '#fff',
+                color: '#ccc',
                 fontSize: "16px"
             }
         },
         xAxis: {
             categories: years,
             labels: { style: {
-                color: '#fff'
+                color: '#ccc'
             }}
         },
         yAxis: {
             labels: { style: {
-                color: '#fff'
+                color: '#ccc'
             }},
             title: {
                 style: {
-                    color: '#fff'
-                }
+                    color: '#ccc',
+                    fontSize: '16px'
+                },
+                text: 'Liczba filmów'
+            },
+            gridLineColor: '#555'
+        },
+        legend: {
+            itemStyle: {
+                color: '#ccc'
+            },
+            itemHiddenStyle: {
+                color: '#555'
+            },
+            itemHoverStyle: {
+                color: '#fff'
             }
         },
         tooltip: {
@@ -213,10 +232,15 @@ function drawChart(data, names, categories, selected, group) {
                 stacking: 'normal',
                 dataLabels: {
                     enabled: false
-                }
+                },
+                borderColor: '#000'
             }
         },
         series: series
 
     });
+}
+
+function changeDescription(description) {
+    $("#description").html(description ? description : "");
 }
