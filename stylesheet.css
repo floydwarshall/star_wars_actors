@@ -1,25 +1,55 @@
-.node{
+.node {
     stroke: #999;
     stroke-width: 1px;
 }
 
-.link{
+.link {
     stroke: #222;
     stroke-opacity: .4;
 }
 
-text{
-    font-size: 10px;
+text {
+    font-size: 12px;
     fill: #ffffff;
 }
 
-body{
+body {
     background-image: url(images/background.jpg);
+    min-height: 880px;
+    min-width: 1620px;
 }
 
-svg{
+svg.d3 {
     position:absolute;
-    top: 0px;
+    top: 150px;
+    left: 50px;
+}
+
+#explain {
+    right: 5px;
+    bottom: 5px;
+    color: #999;
+    position: absolute;
+    font-size: 12px;
+}
+
+#header {
+    float: left;
+    font-size: 20px;
+    color: #ccc;
+    font-weight: bold;
+    text-align: center;
+    width: 1000px;
+}
+
+#description {
+    float: left;
+    font-size: 14px;
+    color: #ccc;
+    width: 1000px;
+    height: 100px;
+    clear: left;
+    padding: 10px;
 }
 
 #rightdiv {
@@ -54,9 +84,7 @@ svg{
 }
 
 #container {
-    height: 600px; 
-    right: 50px;
-    bottom: 50px;
+    height: 650px; 
     width: 1000px;
     float: right;
     clear: right;
