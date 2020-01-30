@@ -4,7 +4,8 @@
       "group": 1,
       "name": "Alec Guinness",
       "s": 112,
-      "foto": "images/02.png"
+      "foto": "images/02.png",
+      "desc": "Alec Guinness, właśc. sir Alec Guinness de Cuffe (ur. 2 kwietnia 1914 w Londynie, zm. 5 sierpnia 2000 w Midhurst) – brytyjski aktor filmowy i teatralny, scenarzysta. Zasłynął rolami w adaptacjach powieści Dickensa i sztuk Szekspira, a także takimi filmami jak Szlachectwo zobowiązuje i Jak zabić starszą panią. Za rolę podpułkownika Nicholsona w filmie Most na rzece Kwai otrzymał Oscara. Do historii kina przeszły również jego role w obrazach Lawrence z Arabii i Gwiezdne wojny (jako Obi-Wan Kenobi). W 1980 został nagrodzony Oscarem Honorowym za całokształt pracy aktorskiej."
     },
     {
       "group": 2,
@@ -78,7 +79,8 @@
       "group": 1,
       "name": "Anthony Daniels",
       "s": 168,
-      "foto": "images/07.png"
+      "foto": "images/07.png",
+      "desc": "Anthony Daniels (ur. 21 lutego 1946 w Salisbury, Wielka Brytania) – angielski aktor telewizyjny i filmowy najbardziej znany z roli robota C-3PO w serii filmów Gwiezdne wojny. Jest jedynym aktorem, który wystąpił we wszystkich dziewięciu filmach sagi (w latach 1977–2019), grając tę samą postać (Kenny Baker, grający R2-D2 wystąpił w siedmiu)."
     },
     {
       "group": 2,
@@ -116,13 +118,15 @@
       "group": 1,
       "name": "Carrie Fisher",
       "s": 272,
-      "foto": "images/03.png"
+      "foto": "images/03.png",
+      "desc": "Carrie Frances Fisher (ur. 21 października 1956 w Beverly Hills, zm. 27 grudnia 2016 w Los Angeles) – amerykańska aktorka, scenarzystka i pisarka. W 1975 roku dostała pierwszą rolę na dużym ekranie w komedii romantycznej Hala Ashby’ego Szampon według scenariusza i z udziałem Warrena Beatty’ego. Dwa lata później stała się znana z roli księżniczki Lei w pierwszej trylogii George’a Lucasa Gwiezdnych wojen (części IV–VI). "
     },
     {
       "group": 1,
       "name": "David Prowse",
       "s": 32,
-      "foto": "images/06.png"
+      "foto": "images/06.png",
+      "desc": "David Charles Prowse (ur. 1 lipca 1935 w Bristolu) – brytyjski aktor filmowy, kulturysta i sztangista. Występował w roli Dartha Vadera w filmach z serii Gwiezdne wojny George’a Lucasa. Głosu postaci użyczał jednak James Earl Jones, gdyż według wielu osób głos i akcent Prowse’a nie pasowały do postaci Dartha Vadera. Prowse nie brał też udziału w scenach walk, gdyż podczas ich kręcenia przypadkowo niszczył kije służące za miecze świetlne."
     },
     {
       "group": 1,
@@ -135,19 +139,22 @@
       "group": 1,
       "name": "Ian McDiarmid",
       "s": 31,
-      "foto": "images/12.png"
+      "foto": "images/12.png",
+      "desc": "Ian McDiarmid (ur. 11 sierpnia 1944 w Carnoustie) – szkocki aktor filmowy i teatralny. Znany jest głównie z roli Palpatine’a w serii Gwiezdne wojny. Studiował na Uniwersytecie w St Andrews i na Królewskiej Akademii w Glasgow."
     },
     {
       "group": 1,
       "name": "Jeremy Bulloch",
       "s": 291,
-      "foto": "images/11.png"
+      "foto": "images/11.png",
+      "desc": "Jeremy A. Bulloch (ur. 16 lutego 1945 roku w Market Harborough) – brytyjski aktor filmowy, telewizyjny i teatralny. Znany jest głównie z roli Boby Fetta w filmach Gwiezdne wojny: część V – Imperium kontratakuje i Gwiezdne wojny: część VI – Powrót Jedi. W Imperium kontratakuje zagrał też postać porucznika Sheckila w mieście w chmurach. W 2005 roku wystąpił epizodycznie w roli kapitana Jeremocha Coltona w filmie Gwiezdne wojny: część III – Zemsta Sithów. "
     },
     {
       "group": 1,
       "name": "Kenny Baker",
       "s": 52,
-      "foto": "images/08.png"
+      "foto": "images/08.png",
+      "desc": "Kenny Baker, właśc. Kenneth George Baker (ur. 24 sierpnia 1934 w Birmingham, zm. 13 sierpnia 2016 w Preston) – brytyjski aktor filmowy, karzeł – miał 112 cm wzrostu. Baker najbardziej znany był z roli R2-D2, droida przeznaczonego do naprawy usterek pojazdów z filmowej sagi Gwiezdne wojny."
     },
     {
       "group": 1,
@@ -160,19 +167,22 @@
       "group": 1,
       "name": "Peter Mayhew",
       "s": 31,
-      "foto": "images/05.png"
+      "foto": "images/05.png",
+      "desc": "Peter Mayhew (ur. 19 maja 1944 w Londynie, zm. 30 kwietnia 2019 w Boyd) – brytyjsko-amerykański aktor filmowy i telewizyjny, występował w roli Chewbakki w sadze Gwiezdne wojny. Jego wzrost wynosił 221 cm. W jednym z wywiadów powiedział, że tak wysoki wzrost był spowodowany nie gigantyzmem, ale zespołem Marfana. Cykl wzrostu zakończył będąc nastolatkiem po udanej kuracji nadmiernie aktywnej przysadki mózgowej."
     },
     {
       "group": 1,
       "name": "Phil Brown",
       "s": 94,
-      "foto": "images/09.png"
+      "foto": "images/09.png",
+      "desc": "Philip Mortimer „Phil” Brown (ur. 30 kwietnia 1916 w Cambridge, zm. 9 lutego 2006 w Los Angeles) – amerykański aktor. Jako aktor zadebiutował w 1941 roku. Wystąpił m.in. w czwartej części Gwiezdnych wojen, Nowej Nadziei (jako Owen Lars, wuj Luke’a Skywalkera). W 1951 roku wyreżyserował film Czarne błyskawice. W 1999 roku zerwał z zawodem aktora. "
     },
     {
       "group": 1,
       "name": "Sebastian Shaw",
       "s": 76,
-      "foto": "images/13.png"
+      "foto": "images/13.png",
+      "desc": "Sebastian Lewis Shaw (ur. 29 maja 1905 w Holt, zm. 23 grudnia 1994 w Brighton) – brytyjski aktor, powieściopisarz, poeta, reżyser i dramaturg. Ukończył Gresham's School. W filmie Gwiezdne wojny: część VI – Powrót Jedi Sebastian Shaw wcielił się w rolę nawróconego Anakina Skywalkera w dwóch scenach. Pierwsza – gdy Luke Skywalker zdejmuje maskę Darthowi Vaderowi (twarz „pod maską” to oblicze Shawa). Druga scena, gdzie widać już Sebastiana w całej okazałości to moment, gdzie Luke’owi objawiają się trzy duchy rycerzy Jedi: Anakina, Yody i Obi-Wana."
     }
   ],
   "links": [
